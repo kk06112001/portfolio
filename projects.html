@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Kunal Kumar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary: #4e54c8;
+            --secondary: #8f94fb;
+            --accent: #ff6b6b;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: #f8fafc;
+            color: #333;
+            line-height: 1.6;
+            padding-top: 80px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        main {
+            flex: 1;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
+        }
+        
+        .projects-header {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-title {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .tech-badge {
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .section-title {
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--dark), #1a252f);
+            padding: 3rem 0;
+            color: white;
+            margin-top: auto;
+        }
+        
+        /* Navbar animation */
+        .navbar-collapse {
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        /* Active link animation */
+        .nav-link.active {
+            position: relative;
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary);
+            animation: underlineGrow 0.3s ease-out forwards;
+        }
+        
+        @keyframes underlineGrow {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+        }
+        
+        .project-img {
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .description-placeholder {
+            background-color: #f8f9fa;
+            border-left: 3px solid var(--primary);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top px-4" data-aos="fade-down">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Kunal Kumar</a>
+            <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse" id="navbarLinks">
+                <button class="close-btn" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Projects Header -->
+        <section class="projects-header" data-aos="fade-down">
+            <div class="container">
+                <h1 class="display-5 fw-bold">My Projects</h1>
+                <p class="lead">Explore my technical implementations and solutions</p>
+            </div>
+        </section>
+
+        <!-- Projects Content -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Featured Work</h2>
+                
+                <!-- Project 1: eBay Review Sentiment Analysis -->
+                <div class="project-card" data-aos="fade-up">
+                    <h3 class="project-title">eBay Review Sentiment Analysis</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="company-rating.png" alt="eBay Sentiment Analysis" class="project-img" onerror="this.src='https://via.placeholder.com/600x400?text=Project+Screenshot'">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="description-placeholder">
+                                <p>This project analyzes customer reviews from eBay to classify sentiments as <strong>positive</strong>, <strong>neutral</strong>, or <strong>negative</strong>.</p>
+
+<p><strong>Key Highlights:</strong></p>
+<ul>
+    <li>A machine learning model built with <strong>Naive Bayes</strong>, trained on cleaned eBay reviews using <strong>TF-IDF</strong> feature extraction.</li>
+    <li>A <strong>Streamlit</strong> web application that leverages <strong>VADER</strong> sentiment analysis for quick, rule-based sentiment predictions on user-provided text.</li>
+</ul>
+
+                            </div>
+                            <div class="mb-3">
+                                <a href="https://github.com/kk06112001/eBay-Review-Sentiment-Analysis" target="_blank" class="btn btn-primary">
+                                    <i class="fab fa-github me-2"></i> View on GitHub
+                                </a>
+                            </div>
+                            <div>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">NLP</span>
+                                <span class="tech-badge">Sentiment Analysis</span>
+                                <span class="tech-badge">Naive Bayes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2: Weather UI -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="project-title">Weather App with 5-Day Forecast</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="lightning-grand-canyon.jpg" alt="Weather UI" class="project-img" onerror="this.src='https://via.placeholder.com/600x400?text=Project+Screenshot'">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="description-placeholder">
+                                <p>A modern and interactive weather dashboard built using <strong>Flask</strong>, <strong>Bootstrap</strong>, and the <strong>OpenWeatherMap API</strong>.</p>
+
+<p><strong>Key Features:</strong></p>
+<ul>
+    <li>Real-time weather data for any city, along with a 5-day forecast</li>
+    <li>Bookmark favorite cities using <code>localStorage</code></li>
+    <li>Support for multiple languages with dynamic language switching</li>
+    <li>Quick reload functionality to reset input fields with a single click</li>
+</ul>
+
+                            </div>
+                            <div class="mb-3">
+                                <a href="https://github.com/kk06112001/Weather-UI" target="_blank" class="btn btn-primary">
+                                    <i class="fab fa-github me-2"></i> View on GitHub
+                                </a>
+                            </div>
+                            <div>
+                                <span class="tech-badge">Flask</span>
+                                <span class="tech-badge">HTML/CSS/Javascript</span>
+                                <span class="tech-badge">Bootstrap 5 + jQuery UI</span>
+                                <span class="tech-badge">Weather API Integration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3: Recipe Recommendation Model -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="project-title">Recipe Recommendation System (by Ingredients)</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="download.jpg" height="1000px" width="800px" alt="Recipe Recommendation" class="project-img" onerror="this.src='https://via.placeholder.com/600x400?text=Project+Screenshot'">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="description-placeholder">
+<p>A content-based recipe recommendation web app built using <strong>Flask</strong> and <strong>Scikit-learn</strong>. It suggests similar recipes based on ingredient similarity using <strong>TF-IDF</strong> and <strong>cosine similarity</strong>.</p>
+
+<h4>Key Features:</h4>
+<ul>
+    <li>Recommend recipes similar to a selected one, purely based on ingredients.</li>
+    <li>Filter by <strong>cuisine</strong>, <strong>course</strong>, or <strong>diet</strong> to refine results.</li>
+    <li>Uses <strong>TF-IDF vectorization</strong> on recipe ingredients for computing similarity.</li>
+    <li>Lightweight and easy to use via a clean <strong>Flask-powered UI</strong>.</li>
+</ul>
+
+<h4>How It Works:</h4>
+<ul>
+    <li>Recipes are vectorized using <code>TfidfVectorizer</code> based on their ingredient lists.</li>
+    <li>When a user selects a cuisine, course, or diet, the app finds matching recipes.</li>
+    <li>For the first filtered recipe, it recommends the top 8 similar recipes based on cosine similarity.</li>
+</ul>
+
+                            </div>
+                            <div class="mb-3">
+                                <a href="https://github.com/kk06112001/Recipe-Recommendation-Model" target="_blank" class="btn btn-primary">
+                                    <i class="fab fa-github me-2"></i> View on GitHub
+                                </a>
+                            </div>
+                            <div>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Recommendation System</span>
+                                <span class="tech-badge">NLP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4: Heart Stroke Prediction -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="project-title">Heart Stroke Prediction Pipeline</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="download (1).jpg" height="1000px" width="800px" alt="Heart Stroke Prediction" class="project-img" onerror="this.src='https://via.placeholder.com/600x400?text=Project+Screenshot'">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="description-placeholder">
+                                <p>A comprehensive machine learning pipeline for heart stroke prediction, designed with modularity and scalability in mind.</p>
+<p>The pipeline follows a structured workflow:</p>
+<ul>
+    <li><strong>Data Ingestion:</strong> Load and organize raw datasets efficiently.</li>
+    <li><strong>Data Validation:</strong> Ensure data quality and schema compliance using custom checks.</li>
+    <li><strong>Data Transformation:</strong> Apply feature engineering and preprocessing techniques to prepare data for modeling.</li>
+    <li><strong>Model Training:</strong> Train and tune a classification model using structured configuration files.</li>
+    <li><strong>Model Evaluation:</strong> Evaluate model performance using MLflow and track experiments through DagsHub.</li>
+</ul>
+<p><strong>Pipeline Configuration Workflow:</strong></p>
+<ul>
+    <li>Update <code>config.yaml</code>, <code>schema.yaml</code>, and <code>params.yaml</code> for flexibility and control.</li>
+    <li>Modify entity classes for custom data handling.</li>
+    <li>Adjust the configuration manager under <code>src/config</code>.</li>
+    <li>Extend or refactor components and pipelines as needed.</li>
+    <li>Run and orchestrate the complete workflow via <code>main.py</code>.</li>
+</ul>
+
+                            </div>
+                            <div class="mb-3">
+                                <a href="https://github.com/kk06112001/Heart-Stroke-Prediction" target="_blank" class="btn btn-primary">
+                                    <i class="fab fa-github me-2"></i> View on GitHub
+                                </a>
+                            </div>
+                            <div>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">ML Pipeline</span>
+                                <span class="tech-badge">Healthcare</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5: Mental Health FAQ Chatbot -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="project-title">Mental Health FAQ Chatbot</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="download.png" alt="Mental Health Chatbot" height="1000px" width="800px" class="project-img" onerror="this.src='https://via.placeholder.com/600x400?text=Project+Screenshot'">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="description-placeholder">
+                                <p>This intelligent mental health chatbot answers user queries using a TF-IDF and cosine similarity-driven approach.</p>
+<ul>
+    <li>Utilizes a dataset of mental health FAQs to match user questions with the most relevant answers.</li>
+    <li>Employs Scikit-learn's <code>TfidfVectorizer</code> and <code>cosine_similarity</code> for NLP-based matching.</li>
+    <li>Includes a similarity threshold to handle ambiguous or unrelated questions gracefully.</li>
+    <li>Features a lightweight Flask web interface for real-time interaction with users.</li>
+    <li>Preprocessed using spaCy for tokenization and text cleaning to improve vector quality.</li>
+</ul>
+
+                            </div>
+                            <div class="mb-3">
+                                <a href="https://github.com/kk06112001/Mental-Health-FAQ-Chatbot" target="_blank" class="btn btn-primary">
+                                    <i class="fab fa-github me-2"></i> View on GitHub
+                                </a>
+                            </div>
+                            <div>
+                                <span class="tech-badge">NLP</span>
+                                <span class="tech-badge">Chatbot</span>
+                                <span class="tech-badge">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6: Customer Segmentation -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+                    <h3 class="project-title">E-commerce Text classification</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="What_is_an_E-commerce_business.jpg" alt="Text xlassification" class="project-img" onerror="this.src='https://via.placeholder.com/600x400?text=Project+Screenshot'">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="description-placeholder">
+                                <p>This project classifies eCommerce product descriptions into categories using Natural Language Processing, supervised machine learning, and deep learning.</p>
+<ul>
+    <li>Preprocessed product descriptions with tokenization, stopword removal, and stemming using NLTK and regular expressions.</li>
+    <li>Converted text data into numerical form using <code>TfidfVectorizer</code> and deep learning models with a tokenizer and padding.</li>
+    <li>Trained and evaluated four traditional machine learning models: Logistic Regression, Random Forest, SVM, and Naive Bayes, achieving an accuracy of up to 97%.</li>
+    <li>Implemented a deep learning model using <code>GRU</code> and <code>Embedding</code> layers in TensorFlow/Keras, achieving a test set accuracy of 97.03%.</li>
+    <li>Used classification metrics such as precision, recall, and F1-score to assess model performance, with excellent results across all categories.</li>
+    <li>Deployed the deep learning model to classify new product descriptions, demonstrating strong predictions for categories like 'Electronics'.</li>
+</ul>
+
+                            </div>
+                            <div class="mb-3">
+                                <a href="https://github.com/kk06112001/E-Commerce-Text-Classification-with-Multiple-Models" target="_blank" class="btn btn-primary">
+                                    <i class="fab fa-github me-2"></i> View on GitHub
+                                </a>
+                            </div>
+                            <div>
+                                <span class="tech-badge">NLP</span>
+                                <span class="tech-badge">GRU</span>
+                                <span class="tech-badge">Machine Learning Models</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 7: Book Recommendation with Chatbot -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="600">
+                    <h3 class="project-title">Book Recommendation with Chatbot</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="download (2).jpg" height="1000px" width="800px" alt="Book Recommendation" class="project-img" onerror="this.src='https://via.placeholder.com/600x400?text=Project+Screenshot'">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="description-placeholder">
+                                <p>This project recommends books based on title, genre, and description using machine learning and natural language processing.</p>
+<ul>
+    <li>Preprocessed book data with tokenization and TF-IDF vectorization for text representation.</li>
+    <li>Built a recommendation system using <code>Word2Vec</code> and <code>TfidfVectorizer</code> for similarity calculations.</li>
+    <li>Used cosine similarity to recommend books based on content similarity.</li>
+    <li>Created a chatbot interface that suggests books based on user input and genre preferences.</li>
+    <li>Deployed the system to provide book recommendations based on user queries.</li>
+</ul>
+
+                            </div>
+                            <div class="mb-3">
+                                <a href="https://github.com/kk06112001/Book-recommendation-with-chatbot-implementation" target="_blank" class="btn btn-primary">
+                                    <i class="fab fa-github me-2"></i> View on GitHub
+                                </a>
+                            </div>
+                            <div>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Recommendation System</span>
+                                <span class="tech-badge">Chatbot</span>
+                                <span class="tech-badge">NLP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 8: Predictive Maintenance -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="700">
+                    <h3 class="project-title">Telecom Customer Churn Prediction</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="download (3).jpg" height="1000px" width="800px" alt="Predictive Maintenance" class="project-img" onerror="this.src='https://via.placeholder.com/600x400?text=Project+Screenshot'">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="description-placeholder">
+                                <p>This project predicts customer churn for a telecom company using machine learning models and data preprocessing techniques.</p>
+<ul>
+    <li>Cleaned and processed customer data, converting data types, handling missing values, and encoding categorical variables.</li>
+    <li>Standardized numerical features like tenure, MonthlyCharges, and TotalCharges for model readiness.</li>
+    <li>Performed exploratory data analysis with visualizations to understand churn patterns across demographics and services.</li>
+    <li>Trained four models: Logistic Regression, Random Forest, Gradient Boosting, and SVM, achieving up to 80.03% accuracy.</li>
+    <li>Evaluated models using accuracy, precision, recall, F1-score, and confusion matrix for deeper insights.</li>
+</ul>
+
+                            </div>
+                            <div class="mb-3">
+                                <a href="https://github.com/kk06112001/Telco-Customer-Churn-Prediction-" target="_blank" class="btn btn-primary">
+                                    <i class="fab fa-github me-2"></i> View on GitHub
+                                </a>
+                            </div>
+                            <div>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">EDA</span>
+                                <span class="tech-badge">Model Building</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer data-aos="fade-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
+                    <h4 class="text-uppercase mb-4">Kunal Kumar</h4>
+                    <p>Data Science & Machine Learning Enthusiast</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <h5 class="text-uppercase mb-4">Connect with me</h5>
+                    <div class="d-flex gap-3 justify-content-center justify-content-md-end">
+                        <a href="https://www.linkedin.com/in/kunal-kumar-339b381bb/" target="_blank" class="text-light">
+                            <i class="fab fa-linkedin-in fa-lg"></i>
+                        </a>
+                        <a href="https://github.com/kk06112001/" target="_blank" class="text-light">
+                            <i class="fab fa-github fa-lg"></i>
+                        </a>
+                        <a href="mailto:kk06112001@gmail.com" class="text-light">
+                            <i class="fas fa-envelope fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-light opacity-25">
+            <div class="text-center">
+                <p class="mb-0">© <span id="currentYear"></span> Kunal Kumar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            once: true,
+            easing: 'ease-out-back'
+        });
+
+        // Update copyright year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Navbar toggle functionality
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        const closeBtn = document.querySelector('.close-btn');
+        
+        navbarToggler.addEventListener('click', function() {
+            navbarCollapse.classList.toggle('show');
+        });
+        
+        closeBtn.addEventListener('click', function() {
+            navbarCollapse.classList.remove('show');
+        });
+        
+        // Close navbar when clicking on nav links (for mobile)
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth < 992) {
+                    navbarCollapse.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

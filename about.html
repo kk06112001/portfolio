@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Kunal Kumar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    :root {
+      --primary: #4e54c8;
+      --secondary: #8f94fb;
+      --accent: #ff6b6b;
+      --dark: #2c3e50;
+      --light: #f8f9fa;
+    }
+
+    body {
+      font-family: 'Rubik', sans-serif;
+      background-color: #f8fafc;
+      color: #333;
+      line-height: 1.6;
+      padding-top: 80px;
+    }
+
+    .navbar {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+      padding: 1rem 2rem;
+    }
+
+    .about-header {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .about-content {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 3rem;
+      margin: 2rem auto;
+      max-width: 900px;
+    }
+
+    .profile-img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid var(--primary);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin: 0 auto 2rem;
+      display: block;
+    }
+
+    .section-title {
+      color: var(--primary);
+      position: relative;
+      padding-bottom: 15px;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      border-radius: 2px;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 50px;
+      margin: 2rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--secondary);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -40px;
+      top: 5px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 3px solid var(--secondary);
+    }
+
+    footer {
+      background: linear-gradient(135deg, var(--dark), #1a252f);
+      padding: 3rem 0;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top px-4" data-aos="fade-down">
+    <div class="container">
+      <a class="navbar-brand" href="#">Kunal Kumar</a>
+      <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse" id="navbarLinks">
+        <button class="close-btn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+        <ul class="navbar-nav gap-3">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Header -->
+  <section class="about-header" data-aos="fade-down">
+    <div class="container">
+      <h1 class="display-5 fw-bold">About Me</h1>
+      <p class="lead">Get to know more about my journey and skills</p>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <section class="py-5">
+    <div class="container">
+      <div class="about-content" data-aos="fade-up">
+        <div class="text-center mb-5">
+          <img src="mypic.jpg" alt="Kunal Kumar" class="profile-img">
+          <h2 class="section-title">Professional Summary</h2>
+          <p >
+            I'm a passionate technologist with a solid foundation in software engineering, where I've spent the past year honing my problem-solving skills by debugging and optimizing Java-based systems. My journey has now led me to the exciting world of data science, where I'm channeling my analytical mindset into Python, machine learning, and deep learning.
+          </p>
+          <p>
+            What truly drives me is transforming raw data into meaningful insights. Whether it's building predictive models with Scikit-learn or experimenting with neural networks in TensorFlow, I thrive on the challenge of uncovering patterns and creating intelligent solutions. My engineering background gives me a unique perspective on writing efficient, production-ready code for data applications.
+          </p>
+          <p>
+            Beyond the technical skills, I bring meticulous attention to detail and a relentless curiosity that keeps me exploring new techniques and frameworks. I believe the best data professionals are lifelong learners, and I'm committed to growing both my technical depth and business acumen in this evolving field.
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6" data-aos="fade-right">
+            <h3 class="mb-4"><i class="fas fa-graduation-cap me-2"></i>Education</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <h5>Bachelor's Of Engineering in Computer Science & Engineering</h5>
+                <p class="text-muted">Thapar Institute Of Engineering & Technology | 2020 - 2024</p>
+              </div>
+              <div class="timeline-item">
+                <h5>Class XII Non Medical</h5>
+                <p class="text-muted">S.T. Mary's School | 2019-2020</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="fade-left">
+            <h3 class="mb-4"><i class="fas fa-briefcase me-2"></i>Key Skills</h3>
+            <ul class="list-unstyled">
+              <li class="mb-3"><strong>Programming:</strong> Python, Java, JavaScript</li>
+              <li class="mb-3"><strong>Data Science & Machine Learning:</strong> Pandas, NumPy, Scikit-learn</li>
+              <li class="mb-3"><strong>Deep Learning:</strong> TensorFlow, Keras</li>
+              <li class="mb-3"><strong>Natural Language Processing:</strong> NLTK, spaCy, Word2Vec, GloVe, Bert, Tf-IDF, Word Embeddings</li>
+              <li class="mb-3"><strong>Tools:</strong> Git, Docker, Airflow, Dagshub</li>
+              <li class="mb-3"><strong>Soft Skills:</strong> Problem-solving, Teamwork, Communication</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
+          <h4 class="text-uppercase mb-4">Kunal Kumar</h4>
+          <p>Data Science & Machine Learning Enthusiast</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <h5 class="text-uppercase mb-4">Connect with me</h5>
+          <div class="d-flex gap-3 justify-content-center justify-content-md-end">
+            <a href="https://www.linkedin.com/in/kunal-kumar-339b381bb/" target="_blank" class="text-light">
+              <i class="fab fa-linkedin-in fa-lg"></i>
+            </a>
+            <a href="https://github.com/kk06112001/" target="_blank" class="text-light">
+              <i class="fab fa-github fa-lg"></i>
+            </a>
+            <a href="mailto:kk06112001@gmail.com" class="text-light">
+              <i class="fas fa-envelope fa-lg"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr class="my-4 bg-light opacity-25">
+      <div class="text-center">
+        <p class="mb-0">© <span id="currentYear"></span> Kunal Kumar. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS animation
+    AOS.init({
+      duration: 800,
+      offset: 100,
+      once: true
+    });
+
+    // Update copyright year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
